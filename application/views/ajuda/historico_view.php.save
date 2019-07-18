@@ -1,0 +1,83 @@
+
+<head>
+	
+</head>
+<body>
+<div class="container span7 text-center col-md-8 col-md-offset-1">
+
+		<?php 
+
+		 // var_dump($dados);
+
+		foreach ($dados as $row ) {
+			// var_dump($row);	 die ;
+
+			if ($row->tipo == 'csv') { ?>
+
+			<table id="historico_outros" class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						<th>Inseridos <?php echo ($row->date); ?></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<p>Inseridos: <?php echo ($row->num_insert); ?></p>
+							<br> 
+							<p>Atualizados: <?php echo ($row->num_update); ?></p>
+							<br> 
+							<p>Tipo: <?php echo ($row->tipo); ?></p>
+							<br>
+							<p>Grupo: <?php echo ($row->grupo); ?></p>
+							<br>
+						</td>
+
+					</tr>
+				</tfoot>
+			</table>
+
+			<?php 
+
+		}
+		else{ 
+
+			?>
+			<table id="historico_alunos" class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						<th>Inseridos <?php echo ($row->date); ?></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<p>Inseridos: <?php echo ($row->num_insert); ?></p>
+							<br> 
+							<p>Atualizados: <?php echo ($row->num_update); ?></p>
+							<br> 
+							<p>Tipo: <?php echo ($row->tipo); ?></p>
+							<br>
+							<p>Grupo: <?php echo ($row->grupo); ?></p>
+							<br>
+							<p>Codigo do Periodo: <?php echo ($row->cod_semestre_insert); ?></p>
+							<br>
+						</td>
+
+					</tr>
+				</tfoot>
+			</tbody>
+		</table>
+
+		<?php 
+
+	}
+
+}
+
+
+
+?>
+</div>
+
+</body>
